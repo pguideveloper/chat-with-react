@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './../App.css';
 
-class App extends Component {
+class Message extends Component {
     
   constructor(props) {
       super(props)
@@ -12,7 +12,9 @@ class App extends Component {
         return (
             <div>
                 <div className="message_box message_box_other">
+                    <div className="topName">{this.props.userData.userName}</div>
                     <p>{this.props.message}</p>
+                    <div className="bottomTime">{this.props.userData.messageDatetime}</div>
                 </div>
                 <div className="clear"></div>
             </div>
@@ -21,7 +23,9 @@ class App extends Component {
         return (
             <div>
                 <div className="message_box message_box_you">
+                <div className="topName">{this.props.userData.userName}</div>
                 <p>{this.props.message}</p>
+                <div className="bottomTime">{this.props.userData.messageDatetime}</div>
             </div>
             <div className="clear"></div>
             </div>
@@ -30,4 +34,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Message;
